@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+ 
+<div class="container mt-5 pt-4">
+  <h2 class="text-center mb-4"><%= title %></h2>
+  <!-- <a href="/add" class="btn btn-sm btn-primary">Add User</a><br/><br/> -->
+  <table class="table table-striped">
+    <thead>
+      <tr class="bg-dark" style="color: white;">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone No.</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% users.forEach(function(user){ %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.phone_no %></td>
+                <td>
+                    <a href="edit/<%= user.id %>" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="delete/<%= user.id %>" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+  </table>
+  <a href="/add" class="btn btn-md btn-warning mb-5">Add User</a><br/><br/>
+</div>
+ 
+</body>
+<footer class="text-center bg-dark mt-5" style="color: white; margin-bottom: -15px;">
+  <p> © Neelima Bellana | 2021</p>
+</footer>
+</html>
