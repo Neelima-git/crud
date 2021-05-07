@@ -9,7 +9,7 @@ const mysql = require('mysql');
 const mysqlConnection=mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'MySql@55',
+    password:'',
     database:'node_crud'
 });
 
